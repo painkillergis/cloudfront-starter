@@ -1,10 +1,10 @@
 {
-  "Comment": "Create CNAME for woodneck-areas.painkillergis.com",
+  "Comment": "Create CNAME for cloudfront-starter.painkillergis.com",
   "Changes": [
     {
       "Action": "CREATE",
       "ResourceRecordSet": {
-        "Name": "woodneck-areas.painkillergis.com",
+        "Name": "cloudfront-starter.painkillergis.com",
         "Type": "CNAME",
         "TTL": 300,
         "ResourceRecords": [
