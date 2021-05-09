@@ -2,7 +2,7 @@
   "CORSRules": [
     {
       "AllowedHeaders": ["*"],
-      "AllowedMethods": ["GET"],
+      "AllowedMethods": ["GET","HEAD"],
       "AllowedOrigins": ["*"],
       "ExposeHeaders": []
     }
