@@ -7,6 +7,6 @@
   "license": "MIT",
   "scripts": {
     "sync": "scripts/aws:s3/sync",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id file://devops/aws:cloudfront/distribution-id --invalidation-batch \"Paths={Quantity=1,Items=[\"/index.html\"]},CallerReference=`uuidgen`\""
+    "invalidate": "scripts/aws:cloudfront/invalidate"
   }
 }
