@@ -2,11 +2,11 @@
 aws acm request-certificate \
   --domain-name cloudfront-starter.painkillergis.com \
   --validation-method DNS | \
-  jq .CertificateArn -r | tr -d '\n' > devops/aws:acm/certificate-arn
+  jq .CertificateArn -r | tr -d '\n' > scripts/aws:acm/certificate-arn
 
 resourceRecord="null"
 while [ "$resourceRecord" = "null" ] ; do
-  description=$(aws acm describe-certificate --certificate-arn file://devops/aws:acm/certificate-arn)
+  description=$(aws acm describe-certificate --certificate-arn file://scripts/aws:acm/certificate-arn)
   resourceRecord=$(echo $description | jq ".Certificate.DomainValidationOptions[].ResourceRecord")
 done
 
@@ -19,9 +19,9 @@ changeBatch=$(jq "
 .Changes[].ResourceRecordSet.Name=\"$name\"
   | .Changes[].ResourceRecordSet.Type=\"$type\"
   | .Changes[].ResourceRecordSet.ResourceRecords[].Value=\"$value\"
-" devops/aws:acm/validate-dns.json)
+" scripts/aws:acm/validate-dns.json)
 aws route53 change-resource-record-sets \
   --hosted-zone-id Z020039932WR8OUOBOALI \
   --change-batch file://<(echo $changeBatch)
 
-aws acm wait certificate-validated --certificate-arn file://devops/aws:acm/certificate-arn
+aws acm wait certificate-validated --certificate-arn file://scripts/aws:acm/certificate-arn

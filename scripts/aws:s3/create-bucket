@@ -5,12 +5,12 @@ aws s3api create-bucket \
 
 aws s3api put-bucket-cors \
   --bucket cloudfront-starter.painkillergis.com \
-  --cors-configuration file://devops/aws:s3/cors-configuration.json
+  --cors-configuration file://scripts/aws:s3/cors-configuration.json
 
 aws s3api put-bucket-policy \
   --bucket cloudfront-starter.painkillergis.com \
-  --policy file://devops/aws:s3/bucket-policy.json
+  --policy file://scripts/aws:s3/bucket-policy.json
 
 aws s3api put-bucket-website \
   --bucket cloudfront-starter.painkillergis.com \
-  --website-configuration file://devops/aws:s3/website-configuration.json
+  --website-configuration file://scripts/aws:s3/website-configuration.json
