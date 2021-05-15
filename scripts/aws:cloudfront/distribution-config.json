@@ -3,7 +3,7 @@
     "Quantity": 1,
     "Items": ["cloudfront-starter.painkillergis.com"]
   },
-  "DefaultRootObject": "index.json",
+  "DefaultRootObject": "index.html",
   "Origins": {
     "Quantity": 1,
     "Items": [
