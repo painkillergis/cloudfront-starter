@@ -6,7 +6,7 @@
   "author": "tyler <tyler@cruftbusters.com>",
   "license": "MIT",
   "scripts": {
-    "sync": "aws s3 sync build/ s3://cloudfront-starter.painkillergis.com/ --cache-control max-age=86400",
+    "sync": "scripts/aws:s3/sync",
     "invalidate": "aws cloudfront create-invalidation --distribution-id file://devops/aws:cloudfront/distribution-id --invalidation-batch \"Paths={Quantity=1,Items=[\"/index.html\"]},CallerReference=`uuidgen`\""
   }
 }
