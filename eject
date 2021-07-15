@@ -1,7 +1,7 @@
 #!/bin/zsh
 name=`echo $PWD | rev | cut -d / -f 1 | rev`
 find . ! -path './.git/*' ! -path './build/*' -type f | xargs sed -i "s/cloudfront-starter/$name/ig"
-rm scripts/aws:acm/certificate-arn scripts/aws:cloudfront/distribution-id
+rm scripts/aws:cloudfront/distribution-id
 rm eject
 git commit -am "ejected from cloudfront-starter"
 git remote set-url origin git@github.com:painkillergis/$name.git
