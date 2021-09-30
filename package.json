@@ -8,6 +8,6 @@
   "scripts": {
     "sync": "scripts/aws:s3/sync",
     "invalidate": "scripts/aws:cloudfront/invalidate",
-    "build": "react-scripts build && scripts/compress-build.mjs"
+    "build": "react-scripts build"
   }
 }
