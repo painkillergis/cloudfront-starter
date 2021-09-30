@@ -5,6 +5,7 @@ find . ! -path './.git/*' ! -path './build/*' -type f | xargs sed -i "s/cloudfro
 find . ! -path './.git/*' ! -path './build/*' -type f | xargs sed -i "s/painkillergis/$group/ig"
 rm scripts/aws:cloudfront/distribution-id
 rm eject
+git add --all
 git commit -am "ejected from cloudfront-starter"
 if [[ `git remote get-url origin` == "git@github.com:painkillergis/cloudfront-starter.git" ]] ; then
   git remote rm origin
